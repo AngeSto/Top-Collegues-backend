@@ -80,7 +80,7 @@
 	</dependencies>
 
 	<build>
-	<finalName>topCollegues</finalName>
+	<finalName>top</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
