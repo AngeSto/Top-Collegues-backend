@@ -19,7 +19,7 @@ import dta.topcolleguesbackend.repository.CollegueRepository;
 
 @RestController
 @RequestMapping("/collegues")
-@CrossOrigin(origins = {"http://localhost:4200", "https://dist-tsdrzixchr.now.sh/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://dist-tsdrzixchr.now.sh"})
 public class CollegueController {
 	
 	@Autowired private CollegueRepository colServ;
