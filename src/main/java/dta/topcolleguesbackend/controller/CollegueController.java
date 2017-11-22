@@ -1,5 +1,6 @@
 package dta.topcolleguesbackend.controller;
 
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -19,7 +20,7 @@ import dta.topcolleguesbackend.repository.CollegueRepository;
 
 @RestController
 @RequestMapping("/collegues")
-@CrossOrigin(origins = {"http://localhost:4200", "https://dist-kinmaeruzc.now.sh", "*"})
+@CrossOrigin(origins = {"*"})
 public class CollegueController {
 	
 	@Autowired private CollegueRepository colServ;
@@ -30,11 +31,12 @@ public class CollegueController {
 	}
 	
 	@PostMapping
-	public void postCollegue(@RequestBody Collegue col){
+	public Collegue postCollegue(@RequestBody Collegue col){
 		Optional <Collegue> opt = colServ.findAll().stream().filter(collegue -> collegue.getNom().equals(col.getNom())).findFirst();
 		if(!opt.isPresent()){
 			colServ.save(col);
 		}
+		return col;
 		
 	}
 	
